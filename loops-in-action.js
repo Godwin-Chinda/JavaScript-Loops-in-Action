@@ -31,3 +31,27 @@ function highlightLinks() {
 }
 
 highlightLinksButton.addEventListener('click', highlightLinks);
+
+//Your Information
+const dummyUserData = {
+    firstName: 'Godwin',
+    lastName: 'Chinda',
+    age: 25
+};
+
+const displayUserDataButton = document.querySelector('#user-data button' )
+
+function displayUserData() {
+    const outputDataElement = document.getElementById('output-user-data');
+
+    outputDataElement.innerHTML = '';
+
+    for (const key in dummyUserData) {
+        const newUserDataList = document.createElement('li');
+        const outputText = key.toUpperCase() + ': ' + dummyUserData[key];
+        newUserDataList.textContent = outputText;
+        outputDataElement.append(newUserDataList)
+    };
+}
+
+displayUserDataButton.addEventListener('click', displayUserData);
